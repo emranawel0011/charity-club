@@ -67,7 +67,7 @@ export function Navigation() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <PrimaryButton href="#donate">Donate Now</PrimaryButton>
+          <PrimaryButton href="/donate">Donate Now</PrimaryButton>
         </div>
 
         {/* Mobile Menu Button */}
@@ -100,7 +100,7 @@ export function Navigation() {
               {link.label}
             </a>
           ))}
-          <PrimaryButton href="#donate" className="w-full mt-2">
+          <PrimaryButton href="/donate" className="w-full mt-2">
             Donate Now
           </PrimaryButton>
         </div>
