@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
-import { Heart, Menu, X } from 'lucide-react';
-import { PrimaryButton } from './PrimaryButton';
+import { useState, useEffect } from "react";
+import { Heart, Menu, X } from "lucide-react";
+import { PrimaryButton } from "./PrimaryButton";
 
 const navLinks = [
-  { label: 'Programs', href: '#programs' },
-  { label: 'Our Impact', href: '#story' },
-  { label: 'About', href: '#about' },
+  { label: "Programs", href: "#programs" },
+  { label: "Our Impact", href: "#story" },
+  { label: "About", href: "#about" },
+  { label: "Giving Preferences", href: "/donate" },
 ];
 
 export function Navigation() {
@@ -16,16 +17,20 @@ export function Navigation() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (!href.startsWith("#")) return;
     e.preventDefault();
     setMobileOpen(false);
     const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -33,8 +38,8 @@ export function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-[1000] h-[72px] flex items-center transition-all duration-300 ${
         scrolled
-          ? 'bg-warm-white/85 backdrop-blur-md shadow-[0_1px_0_rgba(45,42,38,0.06)]'
-          : 'bg-warm-white border-b border-border-beige'
+          ? "bg-warm-white/85 backdrop-blur-md shadow-[0_1px_0_rgba(45,42,38,0.06)]"
+          : "bg-warm-white border-b border-border-beige"
       }`}
     >
       <div className="w-full max-w-[1200px] mx-auto px-6 md:px-10 flex items-center justify-between">
@@ -70,14 +75,18 @@ export function Navigation() {
           className="md:hidden p-2 text-soft-charcoal"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div
         className={`md:hidden absolute top-[72px] left-0 right-0 bg-warm-white border-b border-border-beige overflow-hidden transition-all duration-300 ${
-          mobileOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+          mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-6 py-4 flex flex-col gap-4">

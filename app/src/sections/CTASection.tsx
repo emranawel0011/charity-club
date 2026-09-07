@@ -1,12 +1,12 @@
-import { useScrollEntrance } from '@/hooks/useScrollEntrance';
-import { SectionLabel } from '@/components/SectionLabel';
-import { PrimaryButton } from '@/components/PrimaryButton';
-import { SecondaryButton } from '@/components/SecondaryButton';
-import { Check } from 'lucide-react';
+import { useScrollEntrance } from "@/hooks/useScrollEntrance";
+import { SectionLabel } from "@/components/SectionLabel";
+import { PrimaryButton } from "@/components/PrimaryButton";
+import { SecondaryButton } from "@/components/SecondaryButton";
+import { Check } from "lucide-react";
 
 export function CTASection() {
   const contentRef = useScrollEntrance<HTMLDivElement>({
-    childSelector: '.cta-item',
+    childSelector: ".cta-item",
     stagger: 0.1,
     delay: 0.2,
   });
@@ -32,13 +32,13 @@ export function CTASection() {
         </h2>
 
         <p className="cta-item font-body text-lg text-muted-brown leading-relaxed max-w-[560px] mx-auto mb-10">
-          Every contribution matters — whether it&apos;s your time, a donation, or
-          simply sharing our mission with a friend. Together, we can build a
+          Every contribution matters — whether it&apos;s your time, a donation,
+          or simply sharing our mission with a friend. Together, we can build a
           stronger, kinder community.
         </p>
 
         <div className="cta-item flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <PrimaryButton href="#donate" size="large">
+          <PrimaryButton href="/donate" size="large">
             Donate Now
           </PrimaryButton>
           <SecondaryButton href="#programs">Become a Volunteer</SecondaryButton>

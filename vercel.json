@@ -1,5 +1,6 @@
 {
   "installCommand": "npm install --prefix app",
   "buildCommand": "npm run build --prefix app",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
