@@ -1,23 +1,28 @@
 /** @type {import('tailwindcss').Config} */
+const path = require("path");
+
 module.exports = {
   darkMode: ["class"],
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    path.resolve(__dirname, "./index.html"),
+    path.resolve(__dirname, "./src/**/*.{js,ts,jsx,tsx}"),
+  ],
   theme: {
     extend: {
       colors: {
-        'warm-cream': '#FEFBF7',
-        'warm-white': '#FAF6F1',
-        'soft-charcoal': '#2D2A26',
-        'muted-brown': '#6B5E52',
-        'terracotta': '#C17A5F',
-        'terracotta-light': '#E89B7A',
-        'warm-gold': '#D4A853',
-        'sage-green': '#8A9B7A',
-        'soft-lavender': '#B8A9C9',
-        'light-beige': '#F0E6D8',
-        'border-beige': '#E8DED0',
-        'dark-brown': '#3D3530',
-        'parchment': '#F5EDE3',
+        "warm-cream": "#FEFBF7",
+        "warm-white": "#FAF6F1",
+        "soft-charcoal": "#2D2A26",
+        "muted-brown": "#6B5E52",
+        terracotta: "#C17A5F",
+        "terracotta-light": "#E89B7A",
+        "warm-gold": "#D4A853",
+        "sage-green": "#8A9B7A",
+        "soft-lavender": "#B8A9C9",
+        "light-beige": "#F0E6D8",
+        "border-beige": "#E8DED0",
+        "dark-brown": "#3D3530",
+        parchment: "#F5EDE3",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -53,8 +58,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        'display': ['"Playfair Display"', 'serif'],
-        'body': ['Inter', 'sans-serif'],
+        display: ['"Playfair Display"', "serif"],
+        body: ["Inter", "sans-serif"],
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -65,9 +70,9 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        'card': '0 8px 24px rgba(45, 42, 38, 0.08)',
-        'card-hover': '0 12px 32px rgba(45, 42, 38, 0.12)',
-        'button': '0 4px 16px rgba(193, 122, 95, 0.25)',
+        card: "0 8px 24px rgba(45, 42, 38, 0.08)",
+        "card-hover": "0 12px 32px rgba(45, 42, 38, 0.12)",
+        button: "0 4px 16px rgba(193, 122, 95, 0.25)",
       },
       keyframes: {
         "accordion-down": {
@@ -91,4 +96,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

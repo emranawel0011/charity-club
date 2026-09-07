@@ -8,6 +8,9 @@ export default defineConfig({
   root: path.resolve(__dirname, ".."),
   publicDir: path.resolve(__dirname, "./public"),
   base: "./",
+  css: {
+    postcss: path.resolve(__dirname, "./postcss.config.js"),
+  },
   plugins: [inspectAttr(), react()],
   server: {
     port: 3000,
