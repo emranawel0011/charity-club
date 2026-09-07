@@ -2,5 +2,5 @@
   "installCommand": "npm install --prefix app",
   "buildCommand": "npm run build --prefix app",
   "outputDirectory": "dist",
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
